@@ -8,6 +8,7 @@ const tooltip = document.getElementById("myTooltip");
 
 function getOutput() {
   const input = inputEl.value;
+  restorCopyBtn();
 
   if (input) {
     errorMsg.innerText = "";
@@ -83,19 +84,25 @@ function clearAll() {
   outputEl.innerText = "";
   outputEl.style.display = "none";
   copyBtn.style.display = "none";
+  restorCopyBtn();
 }
 
 function copyText() {
   navigator.clipboard.writeText(outputEl.innerText);
 
-  tooltip.innerHTML = "Copied!";
+  copyBtn.innerText = "Copied!";
+  copyBtn.setAttribute("disabled", "disabled");
+  copyBtn.style.border = "2px solid gray";
+  copyBtn.style.color = "gray";
 }
 
-function outFunc() {
-  tooltip.innerHTML = "Copy to clipboard";
+function restorCopyBtn() {
+  copyBtn.innerText = "Copy";
+  copyBtn.removeAttribute("disabled");
+  copyBtn.style.border = "2px solid";
+  copyBtn.style.color = "white";
 }
 
 encryptBtn.addEventListener("click", getOutput);
 clearBtn.addEventListener("click", clearAll);
 copyBtn.addEventListener("click", copyText);
-copyBtn.addEventListener("mouseout", outFunc);
