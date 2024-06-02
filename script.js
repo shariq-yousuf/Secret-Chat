@@ -1,17 +1,19 @@
 const encryptBtn = document.getElementById("encrypt-btn");
 const clearBtn = document.getElementById("clear-btn");
+const copyBtn = document.getElementById("copy-btn");
 const inputEl = document.getElementById("input-el");
 const outputEl = document.getElementById("output-el");
 const errorMsg = document.getElementById("error-msg");
+const tooltip = document.getElementById("myTooltip");
 
 function getOutput() {
   const input = inputEl.value;
-  outputEl.style.display = "none";
 
   if (input) {
     errorMsg.innerText = "";
     outputEl.style.display = "block";
     outputEl.innerText = encode(input);
+    copyBtn.style.display = "block";
   } else {
     errorMsg.innerText = "Please fill out the input field!";
   }
@@ -80,7 +82,20 @@ function clearAll() {
   errorMsg.innerText = "";
   outputEl.innerText = "";
   outputEl.style.display = "none";
+  copyBtn.style.display = "none";
+}
+
+function copyText() {
+  navigator.clipboard.writeText(outputEl.innerText);
+
+  tooltip.innerHTML = "Copied!";
+}
+
+function outFunc() {
+  tooltip.innerHTML = "Copy to clipboard";
 }
 
 encryptBtn.addEventListener("click", getOutput);
 clearBtn.addEventListener("click", clearAll);
+copyBtn.addEventListener("click", copyText);
+copyBtn.addEventListener("mouseout", outFunc);

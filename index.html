@@ -8,6 +8,10 @@
   </head>
   <body>
     <div id="container">
+      <p class="desc">
+        Enter your text/code in the box below. Click the button to see the
+        encrypted/decrypted message!
+      </p>
       <textarea
         name=""
         id="input-el"
@@ -21,8 +25,18 @@
         <button class="btn" id="clear-btn">Clear All</button>
       </div>
     </div>
-    <div id="output-el"></div>
-    <div id="error-msg"></div>
+    <div class="output-container">
+      <code><div id="output-el"></div></code>
+
+      <div class="tooltip">
+        <button id="copy-btn">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy
+        </button>
+      </div>
+
+      <div id="error-msg"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
