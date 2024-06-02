@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secret Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <textarea
+        name=""
+        id="input-el"
+        placeholder="Input your message!"
+        rows="5"
+        autofocus
+        required
+      ></textarea>
+      <div id="btns-container">
+        <button class="btn" id="encrypt-btn">Encrypt / Decrypt</button>
+        <button class="btn" id="clear-btn">Clear All</button>
+      </div>
+    </div>
+    <div id="output-el"></div>
+    <div id="error-msg"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
