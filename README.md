@@ -3,7 +3,7 @@
 **Send secret messages with a fun twist!** Secret Chat lets you encrypt messages using a simple substitution cipher(GA-DE-RY-PO-LU-KI). Encode your message with a click, then share it with your friends for a fun way to communicate in secret. Easily copy the encrypted message or clear everything to start fresh. Remember, this is a basic encryption method and shouldn't be used for top-secret messages.
 
 **Try Secret Chat Live!**  
-[Access the live app here](https://shariq-yousuf.github.io/Secret-Chat/)
+<a href="https://shariq-yousuf.github.io/Secret-Chat/" target="_blank">Access the live app here</a>
 
 #### Features
 
